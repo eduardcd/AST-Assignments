@@ -133,3 +133,61 @@ iteration π is approximated by 3, in the second iteration by 3.1, then 3.14, an
 The program should cut off π after the current precision length, not round it!
 • Do this until the maximum number of digits of precision is reached, and give the percentage
 of increase of the circumference and the area over the previous iteration.'''
+
+from __future__ import division
+import math
+from decimal import Decimal as D
+from decimal import getcontext
+
+
+def input_diameter():
+    diameter = int(input("Please insert a desired diameter for a circle"))
+    return diameter
+
+input_diameter = input_diameter()
+
+def circle_function(diameter,pi):
+    diameter_in_float = D(diameter)
+    pi_in_float = D(pi)
+    circumference = pi_in_float*diameter_in_float
+    area = pi_in_float*(diameter_in_float/2)**2
+    print (circumference/diameter)
+    return (circumference),(area)
+
+
+circle_data = circle_function(input_diameter,math.pi)
+
+def get_pi(max):
+    #https://www.math.hmc.edu/funfacts/ffiles/20010.5.shtml
+    getcontext().prec = max+1
+    iteration = 10000
+    pi = D(0)
+    for k in range(iteration):
+        pi += D(math.pow(16, -k)) * (D(4/(8*k+1)) - D(2/(8*k+4)) - D(1/(8*k+5)) - D(1/(8*k+6)))
+    return pi
+print(get_pi(25))
+
+def input_desired_digits():
+    precision = int(input("Please select how many digits do you like to take in consideration (please be reasonable)"))
+    default_precision = 15
+    if precision > default_precision:
+        precision = default_precision
+        print("You wasn't reasonable a default value {0} will be used".format(default_precision))
+    return precision
+
+def extend_circle_function(precision):
+    result_list = []
+
+    for i in range(precision+1):
+        if i == 0:
+            calculated_pi = 3
+            result_list.append(circle_function(3,3))
+        else:
+            calculated_pi = get_pi(i)
+            result_list.append(circle_function(3,calculated_pi))
+            circumference_perc_growth = ((result_list[i][0] - result_list[i-1][0])/(result_list[i-1][0]))*100
+            area_perc_growth = ((result_list[i][1] - result_list[i-1][1])/(result_list[i-1][1]))*100
+            print("The percentage of growth of the circumference is = : ",circumference_perc_growth)
+            print("The percentage of growth of the area is = : ",area_perc_growth )
+
+extend_circle_function(input_desired_digits())
