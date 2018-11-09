@@ -53,6 +53,47 @@ smallest long to the largest long integer.
 3. It outputs, in a nicely formatted way, all the numbers computed."""
 
 
+import timeit
+from decimal import Decimal
+
+print("Find all the prime numbers between 0 and your largest integer")
+def primes(min, max):
+    if max >= 2 >= min:
+        print (2)
+    primes = [2]
+    i = 3
+    while i <= max:
+        for p in primes:
+            if i % p == 0 or p*p > i:
+                break
+        if i % p != 0:
+            primes.append(i)
+            if i >= min:
+                print (i)
+        i += 2
+
+primes(0,low_high_number (organized)[1])
+
+def count_int():
+    start = timeit.default_timer()
+    counting = 0
+    for i in range(0,255):
+        counting += i
+        stop = timeit.default_timer()
+    return stop-start
+
+print("The amount of time to test from the smallest to the largest integer is equal to: ",count_int())
+
+#Use it with caution because python does not have a limit for long values for 100000000 numbers it takes 26.8 seconds to solve
+def count_long():
+    start = timeit.default_timer()
+    counting = 0
+    for i in range(0,1000000):
+        counting += i
+        stop = timeit.default_timer()
+    return stop-start
+print("The amount of time to test from the smallest to the largest integer is equal to: ",count_long())
+
 
 
 '''Write a program that inputs the diameter of a circle as a number x from the user and outputs
