@@ -94,7 +94,33 @@ def count_long():
     return stop-start
 print("The amount of time to test from the smallest to the largest integer is equal to: ",count_long())
 
+"""Write an application that iterates over positive integers from 0 to 100, calculates various functions
+in n as listed below, and outputs the results (as integer, where possible and sensible) in table
+format, each function value in a separate column.
+f(n) = 2n
+f(n) = n^(1/2)
+f(n) = 10^n
+f(n) = n^3
+f(n) = 2^(1/n)
+f(n) = e^n
+Some function values may exceed the range of commonly used variable types. Think of alternative
+ways of representating or calculating them in this case."""
+import math
+def different_functions(initial_value,final_value):
+    my_range=range(initial_value,final_value)
+    function_1 = [2*integer for integer in my_range]
+    function_2 = [integer**(.5) for integer in my_range]
+    function_3 = [10**integer for integer in my_range]
+    function_4 = [integer**3 for integer in my_range]
+    function_5 = [2^(1/integer) for integer in my_range]
+    function_6 = [math.exp(integer) for integer in my_range]
+    for i in my_range:
+        if i == len(my_range):
+            break
+        else:
+            print("| {0:.2f} \t| {1:.2f} \t| {2:.5E} \t| {3:.2f} \t| {2:.5E} \t| {3:.2f} \t|".format(function_1[i],function_2[i],function_3[i],function_4[i],function_5[i],function_6[i]))
 
+different_functions(1,101)
 
 '''Write a program that inputs the diameter of a circle as a number x from the user and outputs
 the circumference and the area of the circle.
