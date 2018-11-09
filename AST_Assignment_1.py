@@ -17,6 +17,33 @@ def input_from_user(values):
 
 organized = input_from_user(values)
 
+def sum_numbers (list_numbers):
+    sum=0
+    for i in list_numbers:
+        sum += i
+    return sum
+
+def low_high_number (list_numbers):
+    mini=1e50
+    maxi=-1e50
+    for i in organized:
+        if i < mini:
+            mini = i
+        elif i > maxi:
+            maxi = i
+    return mini,maxi
+
+def variance_number(list_numbers):
+    return np.var(organized)
+
+def average_number (list_numbers):
+    return (sum_numbers(organized)/len(organized))
+
+print("The sum of numbers is equal to: ",sum_numbers(organized))
+print("The lowest numbers is equal to: ", low_high_number (organized)[0])
+print("The biggest number is equal to: ", low_high_number (organized)[1])
+print("The variance number is equal to: ",variance_number(organized))
+print("The average is equal to: ",average_number(organized))
 
 """Write a Java program which performs the following tasks:
 1. It finds all prime numbers between 0 and the largest integer, and between 0 and the largest
