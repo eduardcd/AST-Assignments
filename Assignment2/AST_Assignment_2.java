@@ -250,9 +250,100 @@ value of these numbers.
 		
 	}
 	
+	public static void test_prime()
+	{
+
+		boolean t = true;
+		List<String> p = primes(1000);
+		if (p.get(0) != "2") {
+			t = false;
+		}
+		
+		if (p.size() > 1000) {
+			t = false;
+		}
+	
+		if (Integer.valueOf(p.get(0)) % 2 != 0) {
+			t = false;
+		}
+		
+		if (t == false) {
+			throw new java.lang.Error("prime test failed");
+		}
+
+	}
+	
+	public static void test_time()
+	{
+		boolean t = true;
+
+		if (count_fix_int(10) < 0) {
+			t = false;
+		}
+
+		if (t == false) {
+			throw new java.lang.Error("time test failed");
+		}
+		
+		
+	}
+	
+	public static void test_statistic()
+	{
+		float[] p = new float[]{1,2,3, 8, 4};
+		
+		
+		boolean t = true;
+
+		if (sum(p) != 18) {
+			t = false;
+		}
+		
+		if (product(p) != 192) {
+			t = false;
+		}
+		
+		if (smallest(p) != 1) {
+			t = false;
+		}
+		
+		if (largest(p) != 8) {
+			t = false;
+		}
+		
+		if (t == false) {
+			throw new java.lang.Error("prime test failed");
+		}
+	}
+	
+	public static void test_productoria()
+	{
+		
+		boolean t = true;
+		
+
+		
+		if (productoria(50, 20) != 1) {
+			t = false;
+		}
+		
+		if (productoria(40, 30) != 1) {
+			t = false;
+		}
+		if (productoria(22, 11) != 0.9999999974188252) {
+			t = false;
+		}
+		
+		if (t == false) {
+			throw new java.lang.Error("prime test failed");
+		}
+	}
 	
 	public static void main(String[] args) {
-		
+		test_prime();
+		test_time();
+		test_statistic();
+		test_productoria();
 		//System.out.println(count_prime(100000) + "seconds"); 
 //		int foo = Integer.MAX_VALUE + 1; 
 //		System.out.println(Integer.toUnsignedLong(foo));
@@ -262,13 +353,14 @@ value of these numbers.
 //		System.out.println("The time taken to count to 10 * desired number = " +count_fix_int(10*number) + " seconds");
 //		exercise_6_user_input();
 //		exercise_6(exercise_6_user_input());
-		System.out.println(productoria(10,20)); 
-		System.out.println(productoria(10,20)); 
-		System.out.println(productoria(1000,1200)); 
-		System.out.println(productoria(10000,102000)); 
+//		System.out.println(productoria(10,20)); 
+//		System.out.println(productoria(10,20)); 
+//		System.out.println(productoria(1000,1200)); 
+//		System.out.println(productoria(10000,102000)); 
 	}
 	
 	/*That function has a behavior l*/
 
 }
+
 
