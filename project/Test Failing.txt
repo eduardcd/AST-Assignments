@@ -1,0 +1,39 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.12, pytest-2.8.7, py-1.4.31, pluggy-0.3.1 -- /usr/bin/python
+cachedir: .cache
+rootdir: /home/eduardo/Documents/AST/Project/project, inifile: 
+collected 2 items 
+
+test_Data.py::test_calculate PASSED
+test_Data.py::test_calculate2 FAILED
+
+=================================== FAILURES ===================================
+_______________________________ test_calculate2 ________________________________
+
+    def test_calculate2():
+        rgbd = [ ('knife', 1, .99), ('scissor',2, .65), ('fork',3, .33), ('spoon',4, .80), ('keys',5, .95)]
+        rgb = [('knife', 1, .55), ('fork', 3, .99), ('scissor', 2, .95), ('spoon',4, .99), ('keys',5, .95)]
+        data2 = Data(rgbd, rgb)
+>       assert data2.calculate() == [('knife', 1, .99), ('scissor',2, .95), ('fork',3, .99), ('spoon',4, .99), ('keys',5, .95)]
+E       assert [('knife', 1,...ys', 5, 0.95)] == [('knife', 1, ...ys', 5, 0.95)]
+E         At index 1 diff: ('scissor', 2, 0.99) != ('scissor', 2, 0.95)
+E         Full diff:
+E         [('knife', 1, 0.99),
+E         -  ('scissor', 2, 0.99),
+E         ?                    ^
+E         +  ('scissor', 2, 0.95),
+E         ?                    ^
+E         -  ('fork', 3, 0.95),
+E         ?                 ^
+E         +  ('fork', 3, 0.99),
+E         ?                 ^
+E         ('spoon', 4, 0.99),
+E         ('keys', 5, 0.95)]
+
+test_Data.py:13: AssertionError
+----------------------------- Captured stdout call -----------------------------
+['knife', 'scissor', 'fork', 'spoon', 'keys']
+[1, 2, 3, 4, 5]
+[0.99, 0.65, 0.33, 0.8, 0.95]
+[0.55, 0.99, 0.95, 0.99, 0.95]
+====================== 1 failed, 1 passed in 0.02 seconds ======================

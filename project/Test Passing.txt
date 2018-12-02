@@ -1,0 +1,11 @@
+eduardo@eduardo-AERO-15XV8:~/Documents/AST/Project/project$ PYTHONPATH=. py.test -v
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.12, pytest-2.8.7, py-1.4.31, pluggy-0.3.1 -- /usr/bin/python
+cachedir: .cache
+rootdir: /home/eduardo/Documents/AST/Project/project, inifile: 
+collected 2 items 
+
+test_Data.py::test_calculate PASSED
+test_Data.py::test_calculate2 PASSED
+
+=========================== 2 passed in 0.01 seconds ===========================
