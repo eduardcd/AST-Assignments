@@ -1,0 +1,37 @@
+from code_1 import Data
+
+def test_calculate1():
+    rgbd = [('knife',1, .99), ('scissor', 2, .65), ('spoon', 3, .33), ('spoon', 4, .80), ('keys', 5, .95)]
+    rgb =  [('keys', 5, .95), ('spoon', 4, .99),('fork', 3, .99), ('scissor', 2, .95), ('knife',1, .55)]
+    data = Data(rgbd, rgb)
+    assert data.calculate() == [('knife', 1, .99), ('scissor',2, .95), ('fork',3, .99), ('spoon',4, .99), ('keys',5, .95)]
+
+def test_calculate2():
+    rgbd = []
+    rgb = []
+    data2 = Data(rgbd, rgb)
+    assert data2.calculate() == []
+
+def test_calculate3():
+    rgbd = [('knife',1, .99), ('scissor', 2, .65), ('spoon', 3, .33)]
+    rgb =  []
+    data3 = Data(rgbd, rgb)
+    assert data3.calculate() == [('knife',1, .99), ('scissor', 2, .65), ('spoon', 3, .33)]
+
+def test_calculate4():
+    rgbd = [('knife',1, .99), ('scissor', 2, .65), ('spoon', 3, .33)]
+    rgb =  [('KNIFE',1, .99), ('SCISSOR', 2, .65), ('SPOON', 3, .33)]
+    data4 = Data(rgbd, rgb)
+    assert data4.calculate() == [('knife',1, .99), ('scissor', 2, .65), ('spoon', 3, .33)]
+
+def test_calculate5():
+    rgbd = [('knife',1, .99), ('scissor', 2, .65)]
+    rgb =  [('fork', 3, .99), ('spoon', 4, .99)]
+    data5 = Data(rgbd, rgb)
+    assert data5.calculate() == [('knife', 1, .99), ('scissor',2, .65), ('fork',3, .99), ('spoon',4, .99)]
+
+def test_calculate6():
+    rgbd = [('knife',1, .94),('knife',1, .69),('knife',1, .89)]
+    rgb =  [('knife',1, .99),('fork', 3, .99)]
+    data6 = Data(rgbd, rgb)
+    assert data6.calculate() == [('knife', 1, .99), ('fork',3, .99)]
