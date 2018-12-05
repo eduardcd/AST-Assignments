@@ -1,22 +1,12 @@
-def takeSecond(elem):
-    return elem[1]
-
 class Data:
     def __init__(self, rgbd, rgb):
-        if len(rgbd) != len(rgb):
-            raise ValueError('Invalid Data')
-        for i in range(len(rgbd)):
-            if len(rgbd[i]) != len(rgb[i]):
-                raise ValueError('Invalid Data')
-        self._names = [i[0] for i in sorted(rgbd, key=lambda x: x[0])]
-        self._ids = [i[1] for i in sorted(rgbd, key=lambda x: x[0])]
-        self._rgbd = [i[2] for i in sorted(rgbd, key=lambda x: x[0])]
-        self._rgb = [i[2] for i in sorted(rgb, key=lambda x: x[0])]
-        
+        d = {}
+        for i in rgbd + rgb:
+            if i[1] in d:
+                d[i[1]].append(i)
+            else:
+                d[i[1]] = [i]
+        self.d = d
+            
     def calculate(self):
-        lista = []
-        for i in range(len(self._names)):
-            value = (self._names[i], self._ids[i], max(self._rgbd[i], self._rgb[i]))
-            lista.append(value)
-            lista.sort(key=takeSecond, reverse = False)
-        return lista
+        return sorted([max(self.d[i], key=lambda item:item[2]) for i in self.d])
