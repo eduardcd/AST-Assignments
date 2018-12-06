@@ -7,6 +7,6 @@ class Data:
             else:
                 d[i[1]] = [i]
         self.d = d
-            
+
     def calculate(self):
         return sorted([max(self.d[i], key=lambda item:item[2]) for i in self.d])
