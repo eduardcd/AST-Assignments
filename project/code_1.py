@@ -1,12 +1,11 @@
 class Data:
-    def __init__(self, rgbd, rgb):
-        d = {}
-        for i in rgbd + rgb:
-            if i[1] in d:
-                d[i[1]].append(i)
-            else:
-                d[i[1]] = [i]
-        self.d = d
-            
+    def __init__(self, sensors):
+        self.d = {}
+        for i in sensors:
+            for j in i:
+                if j[1] not in self.d:
+                    self.d[j[1]] = []
+                self.d[j[1]].append(j)
+                
     def calculate(self):
         return sorted([max(self.d[i], key=lambda item:item[2]) for i in self.d])
