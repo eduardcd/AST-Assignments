@@ -2,6 +2,8 @@
 
 This project was originally created to merge the input lists that are delivered by 2 different algorithms that perceive objects. Those lists are an array of tuples that contain the following information (name_object,id_object,percentage_certainty). The algorithm presented should be able of get the tuple with the highest perrcentage of certainty, also should be able of handle complex situations. Some of them are defined on the test cases.
 
+The code is also able to recieve the data from more sensors (there is no any limitation). But there is an important point here; the code expect to recieve correct data from sensors. Each sensor should provide data with object_name, objecti_d, and percentage_certainty. Otherwise it would raise an exception, and inform the user that the data is incorrect. We used this logic here because the task of this module is not data correction. It should have done before this module starts to work.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
