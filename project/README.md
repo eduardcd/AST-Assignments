@@ -189,7 +189,7 @@ class Data:
 10. Now pass the test cases 
 Test Passing.txt
 
-## badges
+## Badges
 
 ![alt text](https://img.shields.io/badge/codecov-95%25-green.svg)
 
@@ -198,3 +198,9 @@ Test Passing.txt
 
 ![alt text](https://img.shields.io/badge/Doxygen-master-blue.svg)
 ![alt text](https://img.shields.io/badge/Doxygen-dev-blue.svg)
+
+## Documentation of Badges
+
+The following website used to produce badges:
+
+https://shields.io
