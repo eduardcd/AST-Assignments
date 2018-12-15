@@ -125,7 +125,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Vahid Mohammadi Gahrooei** - *Initial work* 
+* **Vahid MohammadiGahrooei** - *Initial work* 
   **Eduardo Cervantes Dueñas** - *Initial work*
 
 ## License
@@ -189,5 +189,7 @@ class Data:
 10. Now pass the test cases 
 Test Passing.txt
 
+## badges
 
 ![alt text](https://img.shields.io/badge/codecov-95%25-green.svg)
+![alt text](https://img.shields.io/badge/Test%20Report-master-blue.svg)
