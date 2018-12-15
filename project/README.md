@@ -188,3 +188,5 @@ class Data:
 
 10. Now pass the test cases 
 Test Passing.txt
+
+https://img.shields.io/badge/codecov-95%25-green.svg
