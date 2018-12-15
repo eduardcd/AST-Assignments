@@ -195,3 +195,6 @@ Test Passing.txt
 
 ![alt text](https://img.shields.io/badge/Test%20Report-master-blue.svg)
 ![alt text](https://img.shields.io/badge/Test%20Report-dev-blue.svg)
+
+![alt text](https://img.shields.io/badge/Doxygen-master-blue.svg)
+![alt text](https://img.shields.io/badge/Doxygen-dev-blue.svg)
