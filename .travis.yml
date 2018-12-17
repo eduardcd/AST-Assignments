@@ -17,7 +17,5 @@ install:
 # command to run tests
 script:
 - pytest
-env:
-- CODECOV_TOKEN="ba92c0f1-da25-4c6f-b2ee-7921aba9ee69"
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
