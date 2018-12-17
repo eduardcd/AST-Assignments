@@ -1,3 +1,6 @@
+## Status
+[![Build Status](https://travis-ci.org/eduardcd/AST-Assignments.png?branch=master)](https://travis-ci.org/eduardcd/AST-Assignments)
+
 # Project Object list merger
 
 This project was originally created to merge the input lists that are delivered by 2 different algorithms that perceive objects. Those lists are an array of tuples that contain the following information (name_object,id_object,percentage_certainty). The algorithm presented should be able of get the tuple with the highest perrcentage of certainty, also should be able of handle complex situations. Some of them are defined on the test cases.
@@ -103,19 +106,6 @@ rgb =  [('knife',1, .99),('fork', 3, .99)]
 Expected output = [('knife', 1, .99), ('fork',3, .99)]
 ```
 
-## Deployment
-
-Clone the project to your local repository, we recommend to do some refactoring in order to implement it on to your project
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
