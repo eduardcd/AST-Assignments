@@ -13,9 +13,11 @@ virtualenv:
 # command to install dependencies
 install:
   - pip install pytest
+  - pip install codecov
 # command to run tests
 script:
 - pytest
 
 after_success:
+    - codecov
     - bash <(curl -s https://codecov.io/bash)
