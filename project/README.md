@@ -1,6 +1,10 @@
 ## Status
 [![Build Status](https://travis-ci.org/eduardcd/AST-Assignments.png?branch=master)](https://travis-ci.org/eduardcd/AST-Assignments)
 
+
+[![codecov](https://codecov.io/gh/eduardcd/AST-Assignments/branch/master/graph/badge.svg)](https://codecov.io/gh/eduardcd/AST-Assignments)
+
+
 # Project Object list merger
 
 This project was originally created to merge the input lists that are delivered by 2 different algorithms that perceive objects. Those lists are an array of tuples that contain the following information (name_object,id_object,percentage_certainty). The algorithm presented should be able of get the tuple with the highest perrcentage of certainty, also should be able of handle complex situations. Some of them are defined on the test cases.
@@ -178,19 +182,3 @@ class Data:
 
 10. Now pass the test cases 
 Test Passing.txt
-
-## Badges
-
-![alt text](https://img.shields.io/badge/codecov-95%25-green.svg)
-
-![alt text](https://img.shields.io/badge/Test%20Report-master-blue.svg)
-![alt text](https://img.shields.io/badge/Test%20Report-dev-blue.svg)
-
-![alt text](https://img.shields.io/badge/Doxygen-master-blue.svg)
-![alt text](https://img.shields.io/badge/Doxygen-dev-blue.svg)
-
-## Documentation of Badges
-
-The following website used to produce badges:
-
-https://shields.io
